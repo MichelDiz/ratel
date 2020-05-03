@@ -127,8 +127,9 @@ jobs:
         mkdir build
         tree -d -L 2
         cd client
+        yarn cleanup
         yarn install
-        yarn autoclean --force
+        # yarn autoclean --force
         yarn build:prod
         cd ..
         echo "Ratel was Built"
@@ -145,14 +146,12 @@ jobs:
         echo 'which go-bindata'
         which go-bindata
         tree -d -L 2
-        #go get ./
         which go-bindata
         echo 'build prod'
-        bash scripts/build.prod.sh
+        bash scripts/build.prod.sh --skip
         tree -L 2
 
     - name: Run e2e tests
       run: |
         cd go/src/github.com/${{ github.repository }}
-        bash scripts/runDgraph.sh && sleep 2 & bash scripts/test.sh
-
+        bash scripts/runDgraph.sh && sleep 2 & bash scripts/testGA.sh
