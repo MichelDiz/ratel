@@ -131,9 +131,6 @@ jobs:
         yarn install
         # yarn autoclean --force
         yarn build:prod
-        cd ..
-        echo "Ratel was Built"
-        tree -L 2
 
     - name: Build Ratel Binary
       run: |
