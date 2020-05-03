@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/dgraph-io/ratel/server"
+import "github.com/MichelDiz/ratel/server"
 
 func main() {
 	server.Run()
