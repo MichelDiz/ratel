@@ -153,4 +153,5 @@ jobs:
     - name: Run e2e tests
       run: |
         cd go/src/github.com/${{ github.repository }}
+        tree -L 2
         bash scripts/runDgraph.sh && sleep 2 & bash scripts/testGA.sh
