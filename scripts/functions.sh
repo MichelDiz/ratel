@@ -46,7 +46,11 @@ function doChecks {
 
 # Build server files.
 function buildServer {
-    doChecks
+    if [ $skip != "true" ]; then
+        doChecks
+    else
+        echo ""
+    fi
     echo
     echo "=> Building server files..."
 
