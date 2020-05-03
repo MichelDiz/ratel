@@ -141,6 +141,7 @@ jobs:
         echo $GOPATH
         cd go/src/github.com/${{ github.repository }}
         pwd
+        tree -L 2
         echo 'which go-bindata'
         which go-bindata
         tree -d -L 2
